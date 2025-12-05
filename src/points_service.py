@@ -1,8 +1,3 @@
-from pathlib import Path
-import sys
-
-
-from typing import Optional
 from src.config import get_conn
 
 

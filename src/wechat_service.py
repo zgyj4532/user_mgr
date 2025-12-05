@@ -3,12 +3,13 @@ import hashlib
 import jwt
 import datetime
 from fastapi import Request, HTTPException
+from src.config import get_conn
 
 # 微信小程序配置
 WECHAT_APP_ID = "your_appid"
 WECHAT_APP_SECRET = "your_appsecret"
 
-from src.config import get_conn
+
 
 async def wechat_login(request: Request):
     data = await request.json()

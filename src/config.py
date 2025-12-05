@@ -1,6 +1,3 @@
-from pathlib import Path
-import sys
-
 import os
 import pymysql
 from dotenv import load_dotenv

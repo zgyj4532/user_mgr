@@ -12,7 +12,7 @@ python tools/init_db.py
 import sys
 import pathlib
 import pymysql
-from pymysql.err import OperationalError, Error
+from pymysql.err import Error
 
 # 把项目根目录塞进 PYTHONPATH，否则无法 import src.*
 sys.path.insert(0, str(pathlib.Path(__file__).parent.parent))

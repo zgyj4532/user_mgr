@@ -3,7 +3,8 @@ import bcrypt
 from typing import Optional
 from enum import IntEnum
 from src.config import get_conn
-import string, random  # 在文件头部加这两行
+import string
+import random  # 在文件头部加这两行
 
 
 
