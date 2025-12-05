@@ -1,0 +1,15 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+文件/
+user_data/
+*.egg-info
+*.log
+*.xml
+*.iml
+# Virtual environments
+.venv
+.env
