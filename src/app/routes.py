@@ -1,4 +1,5 @@
-from fastapi import HTTPException
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.responses import JSONResponse
 import uuid
 import datetime
 
@@ -14,13 +15,22 @@ from src.address_service import AddressService
 from src.points_service import add_points
 from src.reward_service import TeamRewardService
 from src.director_service import DirectorService
-
+from src.wechat_service import wechat_login
 
 def _err(msg: str):
     raise HTTPException(status_code=400, detail=msg)
 
 
 def register_routes(app):
+    @app.post('/user/wechat_login', summary="微信一键登录")
+    async def wechat_login_route(request: Request):
+        try:
+            # 调用微信登录逻辑
+            response = await wechat_login(request)
+            return JSONResponse(content=response, status_code=200)
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=str(e))
+        
     @app.post("/user/set-status", summary="冻结/注销/恢复正常")
     def set_user_status(body: SetStatusReq):
         try:
