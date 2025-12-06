@@ -6,7 +6,7 @@ from fastapi import Request, HTTPException
 from src.config import get_conn
 
 # 微信小程序配置
-WECHAT_APP_ID = "your_appid"
+WECHAT_APP_ID = "wxd0d754094880d1ed"
 WECHAT_APP_SECRET = "your_appsecret"
 
 
